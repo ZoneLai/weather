@@ -1,7 +1,7 @@
 package com.eagle.weather.activitys;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.eagle.weather.R;
 
