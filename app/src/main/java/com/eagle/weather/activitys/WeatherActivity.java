@@ -1,5 +1,6 @@
 package com.eagle.weather.activitys;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -22,6 +23,7 @@ import com.bumptech.glide.Glide;
 import com.eagle.weather.R;
 import com.eagle.weather.gson.Forecast;
 import com.eagle.weather.gson.Weather;
+import com.eagle.weather.service.AutoUpdateService;
 import com.eagle.weather.util.HttpUtil;
 import com.eagle.weather.util.Utility;
 
@@ -32,8 +34,8 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 public class WeatherActivity extends AppCompatActivity {
-    private static final String WEATHER_ID = "HE1712062244391141";
-    private static final String WEATHER_KEY = "6dfa7610ea2247958ec528d883d9f9f4";
+    public static final String WEATHER_ID = "HE1712062244391141";
+    public static final String WEATHER_KEY = "6dfa7610ea2247958ec528d883d9f9f4";
 
     private ScrollView mScrollView;
     private TextView titleCity;
@@ -213,7 +215,7 @@ public class WeatherActivity extends AppCompatActivity {
         carWashText.setText(carWash);
         sportText.setText(sport);
         mScrollView.setVisibility(View.VISIBLE);
-//        Intent intent = new Intent(this, AutoUpdateService.class);
-//        startService(intent);
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startService(intent);
     }
 }
