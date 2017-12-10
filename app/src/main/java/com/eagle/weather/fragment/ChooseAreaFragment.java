@@ -1,6 +1,7 @@
 package com.eagle.weather.fragment;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -15,6 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.eagle.weather.R;
+import com.eagle.weather.activitys.MainActivity;
+import com.eagle.weather.activitys.WeatherActivity;
 import com.eagle.weather.db.City;
 import com.eagle.weather.db.County;
 import com.eagle.weather.db.Province;
@@ -101,20 +104,20 @@ public class ChooseAreaFragment extends Fragment {
                 } else if (currentLevel == LEVEL_CITY) {
                     mCity = mCityList.get(i);
                     queryCounties();
-                }
-//                else if (currentLevel == LEVEL_COUNTY) {
-//                    String string = mCountyList.get(i).getWeatherId();
-//                    if (getActivity() instanceof MainActivity) {
-//                        Intent intent = new Intent(getActivity(), WeatherActivity.class);
-//                        intent.putExtra("weather_id", string);
-//                        startActivity(intent);
-//                        getActivity().finish();
-//                    } else if (getActivity() instanceof WeatherActivity) {
+                } else if (currentLevel == LEVEL_COUNTY) {
+                    String string = mCountyList.get(i).getWeatherId();
+                    if (getActivity() instanceof MainActivity) {
+                        Intent intent = new Intent(getActivity(), WeatherActivity.class);
+                        intent.putExtra("weather_id", string);
+                        startActivity(intent);
+                        getActivity().finish();
+                    }
+//                    else if (getActivity() instanceof WeatherActivity) {
 //                        WeatherActivity activity = (WeatherActivity) getActivity();
 //                        // TODO...
 //
 //                    }
-//                }
+                }
             }
         });
         // TODO...
