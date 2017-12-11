@@ -14,8 +14,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * Created by DELL on 2017/12/9.
- * 解析json数据
+ * Created by Zone on 2017/12/9.
  */
 
 public class Utility {

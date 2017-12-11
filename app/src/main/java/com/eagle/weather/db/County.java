@@ -3,7 +3,7 @@ package com.eagle.weather.db;
 import org.litepal.crud.DataSupport;
 
 /**
- * Created by DELL on 2017/12/6.
+ * Created by Zone on 2017/12/6.
  */
 
 public class County extends DataSupport {
