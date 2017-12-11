@@ -111,7 +111,6 @@ public class WeatherActivity extends AppCompatActivity {
         } else {
             loadBingPic();
         }
-        // FIXME...
     }
 
     private void loadBingPic() {
